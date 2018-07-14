@@ -1,0 +1,241 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: rhkiswani
+      changes:
+          - createTable:
+              tableName: COUNTRIES
+              columns:
+                  - column:
+                      name: ID
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          nullable: false
+                  - column:
+                      name: NAME
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+          - loadData:
+              columns:
+              - column:
+                  name: ID
+                  type: NUMERIC
+              - column:
+                  name: NAME
+                  type: STRING
+              encoding: UTF-8
+              file: db/changelog/data/countires.csv
+              tableName: countries
+  - changeSet:
+      id: 2
+      author: rhkiswani
+      changes:
+          - createTable:
+              tableName: CITIES
+              columns:
+                  - column:
+                      name: ID
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          nullable: false
+                  - column:
+                      name: NAME
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: COUNTRY_ID
+                      type: int
+                      constraints:
+                          nullable: false
+                  - addForeignKeyConstraint:
+                      baseColumnNames: COUNTRY_ID
+                      baseTableName: CITIES
+                      constraintName: fk_city_country
+                      onDelete: CASCADE
+                      onUpdate: RESTRICT
+                      referencedColumnNames: ID
+                      referencedTableName: COUNTRIES
+  - changeSet:
+      id: 3
+      author: rhkiswani
+      changes:
+          - createTable:
+              tableName: LOCATIONS
+              columns:
+                  - column:
+                      name: ID
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          nullable: false
+                  - column:
+                      name: STREET
+                      type: varchar(255)
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: HOUSENUMBER
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: POSTALCODE
+                      type: varchar(255)
+                  - column:
+                      name: CITY_ID
+                      type: int
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: LATITUDE
+                      type: double
+                  - column:
+                      name: LONGITUDE
+                      type: double
+                  - addForeignKeyConstraint:
+                      baseColumnNames: CITY_ID
+                      baseTableName: LOCATIONS
+                      constraintName: fk_address_city
+                      onDelete: CASCADE
+                      onUpdate: RESTRICT
+                      referencedColumnNames: ID
+                      referencedTableName: CITIES
+  - changeSet:
+      id: 4
+      author: rhkiswani
+      changes:
+          - createTable:
+              tableName: ATM_TYPES
+              columns:
+                  - column:
+                      name: ID
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          nullable: false
+                  - column:
+                      name: NAME
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: DESCRIPTION
+                      type: longtext
+  - changeSet:
+      id: 5
+      author: rhkiswani
+      changes:
+          - createTable:
+              tableName: ATMS
+              columns:
+                  - column:
+                      name: ID
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          nullable: false
+                  - column:
+                      name: NAME
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: LOCATION_ID
+                      type: int
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: ATM_TYPE_ID
+                      type: int
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: DISTANCE
+                      type: double
+                  - addForeignKeyConstraint:
+                      baseColumnNames: LOCATION_ID
+                      baseTableName: LOCATIONS
+                      constraintName: fk_atm_location
+                      onDelete: CASCADE
+                      onUpdate: RESTRICT
+                      referencedColumnNames: ID
+                      referencedTableName: LOCATIONS
+                  - addForeignKeyConstraint:
+                      baseColumnNames: ATM_TYPE_ID
+                      baseTableName: ATM_TYPES
+                      constraintName: fk_atm_atm_type
+                      onDelete: CASCADE
+                      onUpdate: RESTRICT
+                      referencedColumnNames: ID
+                      referencedTableName: ATM_TYPES
+  - changeSet:
+      id: 6
+      author: rhkiswani
+      changes:
+          - createTable:
+              tableName: USERS
+              columns:
+                  - column:
+                      name: ID
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          nullable: false
+                  - column:
+                      name: NAME
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: USERNAME
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: PASSWORD
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: ROLE
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+                  - column:
+                      name: ACTIVE
+                      type: int(1)
+                      constraints:
+                          nullable: false
+          - loadData:
+              columns:
+              - column:
+                  name: ID
+                  type: NUMERIC
+              - column:
+                  name: NAME
+                  type: STRING
+              - column:
+                  name: USERNAME
+                  type: STRING
+              - column:
+                  name: PASSWORD
+                  type: STRING
+              - column:
+                  name: ROLE
+                  type: STRING
+              - column:
+                  name: ACTIVE
+                  type: Boolean
+              encoding: UTF-8
+              file: db/changelog/data/users.csv
+              tableName: USERS
