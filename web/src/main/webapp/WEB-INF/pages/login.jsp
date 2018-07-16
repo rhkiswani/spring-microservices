@@ -7,15 +7,8 @@
 	<meta charset="utf-8">
 	<meta name="author" content="kiswanim">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap-theme.min.css" />
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.13/i18n/jquery-ui-i18n.min.js" />
 </head>
 <style>
@@ -23,12 +16,12 @@ html,body {
 	height: 100%;
 }
 
-body.my-login-page {
+body.login-page {
 	background-color: #f7f9fb;
 	font-size: 14px;
 }
 
-.my-login-page .brand {
+.login-page .brand {
 	height: 90px;
 	overflow: hidden;
 	margin: 0 auto;
@@ -36,72 +29,72 @@ body.my-login-page {
 	box-shadow: 0 0 40px rgba(0,0,0,.05);
 }
 
-.my-login-page .brand img {
+.login-page .brand img {
 	width: 100%;
 }
 
-.my-login-page .card-wrapper {
+.login-page .card-wrapper {
 	width: 400px;
 	margin: 0 auto;
 }
 
-.my-login-page .card {
+.login-page .card {
 	border-color: transparent;
 	box-shadow: 0 0 40px rgba(0,0,0,.05);
 }
 
-.my-login-page .card.fat {
+.login-page .card.fat {
 	padding: 10px;
 }
 
-.my-login-page .card .card-title {
+.login-page .card .card-title {
 	margin-bottom: 30px;
 }
 
-.my-login-page .form-control {
+.login-page .form-control {
 	border-width: 2.3px;
 }
 
-.my-login-page .form-group label {
+.login-page .form-group label {
 	width: 100%;
 }
 
-.my-login-page .btn.btn-block {
+.login-page .btn.btn-block {
 	padding: 12px 10px;
 }
 
-.my-login-page .margin-top20 {
+.login-page .margin-top20 {
 	margin-top: 20px;
 }
 
-.my-login-page .no-margin {
+.login-page .no-margin {
 	margin: 0;
 }
 
-.my-login-page .footer {
+.login-page .footer {
 	margin: 40px 0;
 	color: #888;
 	text-align: center;
 }
 
 @media screen and (max-width: 425px) {
-	.my-login-page .card-wrapper {
+	.login-page .card-wrapper {
 		width: 90%;
 		margin: 0 auto;
 	}
 }
 
 @media screen and (max-width: 320px) {
-	.my-login-page .card.fat {
+	.login-page .card.fat {
 		padding: 0;
 	}
 
-	.my-login-page .card.fat .card-body {
+	.login-page .card.fat .card-body {
 		padding: 15px;
 	}
 }
 </style>
-<body class="my-login-page">
+<body class="login-page">
 	<section class="h-100">
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">
@@ -145,8 +138,7 @@ body.my-login-page {
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/my-login.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>

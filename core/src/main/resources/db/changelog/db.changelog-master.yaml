@@ -28,7 +28,7 @@ databaseChangeLog:
                   type: STRING
               encoding: UTF-8
               file: db/changelog/data/countires.csv
-              tableName: countries
+              tableName: COUNTRIES
   - changeSet:
       id: 2
       author: rhkiswani
