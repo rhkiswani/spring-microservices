@@ -51,9 +51,9 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 ING atms web service is secured by https so u might need to install the certificate
 ##### install SSL certificates 
-- go to `deployment/`
+- go to `deployment`
 - run `install_certs.sh`
-- Please note that the `install_certs.sh` assums that you have `JAVA_HOME` define on the path
+- Please note that the `install_certs.sh` assums that you have `JAVA_HOME` defined on the path
 
 ### Deployment
 
