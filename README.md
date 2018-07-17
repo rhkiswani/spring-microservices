@@ -67,6 +67,11 @@ ING atms web service is secured by https so u might need to install the certific
 ### TODO
 - Unit tests 
 - Implement forntend with react
+- setup with `maven checkstyle plugin`
+- setup with `maven pmd plugin`
+- setup `maven release plugin`
+- integrate with nexus to publish the artifacts
+ 
 
 ### Contact
 - rhkiswani@gmail.com
