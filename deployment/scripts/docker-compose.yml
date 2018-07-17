@@ -7,18 +7,19 @@ services:
         - MYSQL_ROOT_PASSWORD=Mrk_9626
         - MYSQL_DATABASE=atms
         - MYSQL_PASSWORD=Mrk_9626
-      networks:
-        - local_network
 
     loader:
-      image: ing-atms-locator/ing-atms-locations-loader:latest
+      image: ing-atms-locator/loader:latest
       container_name: loader
-      networks:
-        - local_network
+      environment:
+        DB_HOST: mysql
+        DB_PORT: 3306
+        DB_USERNAME: root
+        DB_PASSWORD: Mrk_9626
       links:
         - mysql
       ports:
-        - 8080:8080
+        - 8082:8082
       command: ./docker-enterypoint.sh "mysql" "mysql" "3306" "./loader.jar" "docker"
 
 
@@ -27,14 +28,15 @@ services:
       container_name: web
       depends_on:
         - loader
-      networks:
-        - local_network
+      environment:
+        DB_HOST: mysql
+        DB_PORT: 3306
+        DB_USERNAME: root
+        DB_PASSWORD: Mrk_9626
       links:
+        - loader
         - mysql
       ports:
         - 8081:8081
-      command: ./docker-enterypoint.sh "mysql" "mysql" "3306" "./web.war" "docker"
-networks:
-  local_network:
-    external: false
+      command: ./docker-enterypoint.sh "loader" "loader" "8082" "./web.war" "docker"
 

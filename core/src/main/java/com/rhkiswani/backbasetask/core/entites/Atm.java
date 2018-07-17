@@ -15,10 +15,10 @@ public class Atm extends AbstractEntity<Atm> {
     private Double distance;
 
     @ManyToOne
-    @JoinColumn(name = "LOCATION_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "location_id", referencedColumnName = "id")
     private Location location;
     @ManyToOne
-    @JoinColumn(name = "ATM_TYPE_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "atm_type_id", referencedColumnName = "id")
     private AtmType atmType;
 
     public Atm() {

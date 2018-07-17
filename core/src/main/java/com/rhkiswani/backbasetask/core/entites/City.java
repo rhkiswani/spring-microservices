@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "CITIES")
+@Table(name = "cities")
 public class City extends AbstractEntity<City> {
 
     @Id
@@ -14,7 +14,7 @@ public class City extends AbstractEntity<City> {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "country_id", referencedColumnName = "id")
     private Country country;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")

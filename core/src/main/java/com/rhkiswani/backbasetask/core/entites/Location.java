@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "LOCATIONS")
+@Table(name = "locations")
 public class Location extends AbstractEntity<Location> {
 
     @Id
@@ -22,7 +22,7 @@ public class Location extends AbstractEntity<Location> {
     private Double longitude;
 
     @ManyToOne
-    @JoinColumn(name = "CITY_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "city_id", referencedColumnName = "id")
     private City city;
 
     public Location() {

@@ -26,6 +26,5 @@ public class LoaderService {
         Set<AtmType> types = list.stream().map(atm -> atm.getAtmType()).collect(Collectors.toSet());
         atmService.deleteByAtmTypeIn(types);
         atmService.saveAll(list);
-        System.out.println(list);
     }
 }

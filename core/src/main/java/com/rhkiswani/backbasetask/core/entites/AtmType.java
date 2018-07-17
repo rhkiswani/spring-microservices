@@ -3,7 +3,7 @@ package com.rhkiswani.backbasetask.core.entites;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ATM_TYPES")
+@Table(name = "atm_types")
 public class AtmType extends AbstractEntity<AtmType> {
 
     @Id

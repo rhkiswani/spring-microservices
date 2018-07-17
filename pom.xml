@@ -12,7 +12,7 @@
     <name>backbase-task</name>
 
     <modules>
-        <module>atms-locations-loader</module>
+        <module>loader</module>
         <module>web</module>
         <module>core</module>
     </modules>

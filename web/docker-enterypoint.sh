@@ -8,10 +8,8 @@ function waitTillItsUp(){
         echo "=================================================================="
         echo "Waiting for $2 docker to be up"
         echo "=================================================================="
-
-        output=$(echo "" | nc $server_host $3)
-        if [ "$output" != "" ]
-        then
+        output=$(nc -zv $server_host $3 2>&1 | grep open)
+        if [[ "$output" =~ "open" ]]; then
             echo "=================================================================="
             echo "$2 is running and ready to process requests."
             echo "=================================================================="

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "COUNTRIES")
+@Table(name = "countries")
 public class Country extends AbstractEntity<Country> {
 
     @Id
