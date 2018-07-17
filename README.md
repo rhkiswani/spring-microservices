@@ -44,6 +44,8 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 - Run `com.rhkiswani.backbasetask.loader.LoaderApp`
 - Run `com.rhkiswani.backbasetask.web.WebApp`
 - Open the browser on `http://localhost:8081`
+- Username: admin
+- Password : admin
 
 ### Hints
 
@@ -71,6 +73,7 @@ ING atms web service is secured by https so u might need to install the certific
 - setup with `maven pmd plugin`
 - setup `maven release plugin`
 - integrate with nexus to publish the artifacts
+- remove the UI work from `index.jsp` and use the dist from the frontend folder
  
 
 ### Contact
